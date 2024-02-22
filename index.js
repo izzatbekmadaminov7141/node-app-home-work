@@ -64,7 +64,7 @@ const server = http.createServer(function (req, res) {
     req.on("end", () => {
       const formData = Buffer.concat(body).toString();
       const book = qs.parse(formData);
-      book.id = uuidv4(); // Add a unique id for the book
+      book.id = uuidv4(); 
       fs.readFile("./books.json", (err, data) => {
         if (err) {
           console.error(err);
